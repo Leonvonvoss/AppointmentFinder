@@ -1,0 +1,25 @@
+{
+  "name": "appointmentfinder",
+  "version": "1.0.0",
+  "description": "It's like doodle xD",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+	"start": "lite-server",
+    "watch": "tsc --watch",
+    "build": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Leonvonvoss/AppointmentFinder.git"
+  },
+  "author": "Leon von Voss & Lanre Olanrewaju Ajibua",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Leonvonvoss/AppointmentFinder/issues"
+  },
+  "homepage": "https://github.com/Leonvonvoss/AppointmentFinder#readme",
+  "devDependencies": {
+    "lite-server": "^2.6.1"
+  }
+}
