@@ -1,5 +1,5 @@
 // Settings:
-var restServer = "http://localhost:80/webtechnologien/SM2021/1-Test/backend/serviceHandler.php";
+var restServer = "http://localhost:80/webtechnologien/SM2021/AppointmentFinderProject/AppointmentFinder/backend/serviceHandler.php";
 /*$.getJSON(restServer,
     { 'method': 'queryPersonByDept', 'param': 'Faculty' },
     function (data: object) {

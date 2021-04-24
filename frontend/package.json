@@ -23,6 +23,7 @@
     "lite-server": "^2.6.1"
   },
   "dependencies": {
-    "@types/jquery": "^3.5.5"
+    "@types/jquery": "^3.5.5",
+    "save-dev": "0.0.1-security"
   }
 }
