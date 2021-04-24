@@ -37,6 +37,6 @@ window.addEventListener("load", function() {
     u.textContent = "Your browser is: Unkown browser";
   }
 
-  p?.appendChild(u);
-  div?.appendChild(p);
+  p.appendChild(u);
+  div.appendChild(p);
 });

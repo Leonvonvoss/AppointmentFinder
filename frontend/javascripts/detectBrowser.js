@@ -34,6 +34,6 @@ window.addEventListener("load", function () {
     else {
         u.textContent = "Your browser is: Unkown browser";
     }
-    p === null || p === void 0 ? void 0 : p.appendChild(u);
-    div === null || div === void 0 ? void 0 : div.appendChild(p);
+    p.appendChild(u);
+    div.appendChild(p);
 });
