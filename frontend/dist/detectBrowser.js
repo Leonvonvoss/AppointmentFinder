@@ -1,4 +1,3 @@
-"use strict";
 window.addEventListener("load", function () {
     var div = document.getElementById("browsertype");
     var p = document.createElement("p");
