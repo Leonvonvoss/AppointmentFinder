@@ -1,5 +1,6 @@
 <?php
 include("./models/person.php");
+include("./models/appointment.php");
 class DataHandler
 {
 
