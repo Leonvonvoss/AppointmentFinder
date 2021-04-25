@@ -15,28 +15,36 @@ class SimpleLogic
     {
         switch ($method) {
 
-            case "queryPersons":
-                $res = $this->dh->queryPersons();
+            case "queryAppoints":
+                $res = $this->dh->queryAppoints();
                 break;
 
-            case "queryPersonById":
-                $res = $this->dh->queryPersonById($param);
+            case "queryAppointById":
+                $res = $this->dh->queryAppointById($param);
                 break;
 
-            case "queryPersonByName":
-                $res = $this->dh->queryPersonByName($param);
+            case "queryAppointsByCreator":
+                $res = $this->dh->queryAppointsByCreator($param);
                 break;
 
-            case "queryPersonByMail":
-                $res = $this->dh->queryPersonByMail($param);
+            case "queryAppointByTitle":
+                $res = $this->dh->queryAppointByTitle($param);
                 break;
 
-            case "queryPersonByPhone":
-                $res = $this->dh->queryPersonByPhone($param);
+            case "queryAppointByLocation":
+                $res = $this->dh->queryAppointByLocation($param);
                 break;
 
-            case "queryPersonByDept":
-                $res = $this->dh->queryPersonByDept($param);
+            case "queryAppointByInfo":
+                $res = $this->dh->queryAppointByInfo($param);
+                break;
+
+            case "queryAppointByStartDate":
+                $res = $this->dh->queryAppointByStartDate($param);
+                break;
+
+            case "queryAppointsASCStartDate":
+                $res = $this->dh->queryAppointsASCStartDate();
                 break;
 
             default:

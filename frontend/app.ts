@@ -14,7 +14,7 @@ function loadData() {
         url: restServer,
         cache: false,
         data: {
-            method: "queryPersons",
+            method: "queryAppoints",
             param: "",
         },
         dataType: "json",

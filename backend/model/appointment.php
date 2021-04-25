@@ -6,10 +6,11 @@
  * Time: 19:06
  */
 
-class appointment
+class Appointment
 {
     public $id;
-    public $titel;
+    public $creator;
+    public $title;
     public $location;
     public $info;
     public $startDate;
@@ -18,20 +19,22 @@ class appointment
     /**
      * appointment constructor.
      * @param $id
-     * @param $titel
+     * @param $creator
+     * @param $title
      * @param $location
      * @param $info
      * @param $startDate
      * @param $endDate
      */
-    public function __construct($id, $titel, $location, $info, $startDate, $endDate)
+    public function __construct($id, $creator, $title, $location, $info, $startDate, $endDate)
     {
-        $this->id = setId($id);
-        $this->titel = setTitel($titel);
-        $this->location = setLocation($location);
-        $this->info = setInfo($info);
-        $this->startDate = $this->setStartDate($startDate);
-        $this->endDate = $this->setEndDate($endDate);
+        $this->id = $id;
+        $this->$creator = $creator;
+        $this->title = $title;
+        $this->location = $location;
+        $this->info = $info;
+        $this->startDate = $startDate;
+        $this->endDate = $endDate;
     }
 
 }
