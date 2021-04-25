@@ -1,19 +1,19 @@
 <?php
-include("./models/person.php");
-include("./models/appointment.php");
+include("./model/person.php");
+include("./model/appointment.php");
 class DataHandler
 {
 
-    public function queryPersons()
+    public function queryAppoints()
     {
         $res =  $this->getDemoData();
         return $res;
     }
 
-    public function queryPersonById($id)
+    public function queryAppointById($id)
     {
         $result = array();
-        foreach ($this->queryPersons() as $val) {
+        foreach ($this->queryAppoints() as $val) {
             if ($val[0]->id == $id) {
                 array_push($result, $val);
             }
@@ -21,60 +21,89 @@ class DataHandler
         return $result;
     }
 
-    public function queryPersonByName($name)
+    public function queryAppointsByCreator($creator)
     {
         $result = array();
-        foreach ($this->queryPersons() as $val) {
-            if ($val[0]->firstname == $name) {
+        foreach ($this->queryAppoints() as $val) {
+            if ($val[0]->creator == $creator) {
                 array_push($result, $val);
             }
         }
         return $result;
     }
 
-    public function queryPersonByMail($mail)
+    public function  queryAppointByTitle($title)
     {
         $result = array();
-        foreach ($this->queryPersons() as $val) {
-            if ($val[0]->email == $mail) {
+        foreach ($this->queryAppoints() as $val) {
+            if ($val[0]->title == $title) {
                 array_push($result, $val);
             }
         }
         return $result;
     }
 
-    public function queryPersonByPhone($phone)
+    public function queryAppointByLocation($location)
     {
         $result = array();
-        foreach ($this->queryPersons() as $val) {
-            if ($val[0]->phone == $phone) {
+        foreach ($this->queryAppoints() as $val) {
+            if ($val[0]->location == $location) {
                 array_push($result, $val);
             }
         }
         return $result;
     }
 
-    public function queryPersonByDept($dept)
+    public function queryAppointByInfo($info)
     {
         $result = array();
-        foreach ($this->queryPersons() as $val) {
-            if ($val->department == $dept) {
+        foreach ($this->queryAppoints() as $val) {
+            if ($val[0]->info == $info) {
                 array_push($result, $val);
             }
         }
+        return $result;
+    }
+
+    public function queryAppointByStartDate($startDate)
+    {
+        $result = array();
+        foreach ($this->queryAppoints() as $val) {
+            if ($val[0]->startDate == $startDate) {
+                array_push($result, $val);
+            }
+        }
+        return $result;
+    }
+
+    /*
+     * Need to be fixed
+     */
+    public function queryAppointsASCStartDate()
+    {
+        $result = array();
+        foreach ($this->queryAppoints() as $val) {
+            if ($val[0]->startDate != "") {
+                array_push($result, $val);
+            }
+        }
+
+        function cb($a, $b) {
+            return strtotime($a->startDate) - strtotime($b->startDate);
+        }
+        usort($result, 'cb');
+
         return $result;
     }
 
     private static function getDemoData()
     {
-
-        $demodata = [
-            new Person(1, "Jane", "Doe", "jane.doe@fhtw.at", 1234567, "Central IT"),
-            new Person(2, "John", "Doe", "john.doe@fhtw.at", 34345654, "Help Desk"),
-            new Person(3, "baby", "Doe", "baby.doe@fhtw.at", 54545455, "Management"),
-            new Person(4, "Mike", "Smith", "mike.smith@fhtw.at", 343477778, "Faculty"),
+        $demoData = [
+            new Appointment(1, "Leon","Coronaparty", "At my hood", "Come all together!", "23.04.2021 15:00:00", "24.04.2021 15:00:00"),
+            new Appointment(2, "Lanre","Movie night", "At FH-Technikum", "Netflix!!!", "25.04.2021 15:00:00", "26.04.2021 15:00:00"),
+            new Appointment(3, "Dave","Cooking dinner", "In the kitchen", "Awesome food! Bring your glass with you!", "27.04.2021 15:00:00", "28.04.2021 15:00:00"),
+            new Appointment(4, "Anna","Birthday", "On the rooftop", "Musik, alkohol and fun!", "29.04.2021 15:00:00", "30.04.2021 15:00:00"),
         ];
-
-        return $demodata;
+        return $demoData;
     }
 }
