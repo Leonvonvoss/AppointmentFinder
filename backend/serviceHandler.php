@@ -1,5 +1,5 @@
 <?php
-include("businesslogic/simpleLogic.php");
+include("logic/simpleLogic.php");
 
 //if method != NULL -> method = get[method] else ""
 $method = isset($_GET["method"]) ? $_GET["method"] : "";
