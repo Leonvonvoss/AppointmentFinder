@@ -13,8 +13,11 @@
     <link rel="stylesheet" href="pages/assets/fonts/fontawesome5-overrides.min.css">
     <!-- Custom styles for this template -->
     <link type="text/css" rel="stylesheet" href="pages/assets/css/style.css" />
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <!-- Custom JavaScript -->
     <script src="javascripts/app.js" defer></script>
+    <script src="javascripts/usernameSession.js" defer></script>
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 </head>
 <body id="page-top" onload="loadData()">
@@ -66,7 +69,6 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-                                <a id="trAppoint1" href="google.com">
                                     <tr>
                                         <td>1</td>
                                         <td><img class="rounded-circle me-2" width="30" height="30" src="pages/assets/img/avatars/avatar5.jpeg">Leon</td>
@@ -77,12 +79,8 @@
                                         <td>24.04.2021 15:00:00</td>
                                         <td><button class="btn btn-primary btn-sm" type="button" onclick="viewAppoint(1)">Details</button></td>
                                     </tr>
-                                </a>
-                                <a id="trAppoint2" href="google.com">
                                     <div id="loadData">
-
                                     </div>
-                                </a>
                                 </tbody>
                                 <tfoot>
                                 <tr>
@@ -144,7 +142,7 @@
                             <div class="col-md-2">
                                 <div class="card shadow mb-4">
                                     <div class="card-header py-3">
-                                        <h6 class="text-primary fw-bold m-0"><u>Deine Vefügbarkeit / Vote</u></h6>
+                                        <h6 class="text-primary fw-bold m-0"><u>Deine Verfügbarkeit / Vote</u></h6>
                                     </div>
                                     <ul class="list-group list-group-flush">
                                         <li class="list-group-item">

@@ -29,7 +29,7 @@ class Appointment
     public function __construct($id, $creator, $title, $location, $info, $startDate, $endDate)
     {
         $this->id = $id;
-        $this->$creator = $creator;
+        $this->creator = $creator;
         $this->title = $title;
         $this->location = $location;
         $this->info = $info;
