@@ -16,7 +16,7 @@ function loadData() {
         },
         dataType: "json",
         success: function (data) {
-            $('#mainpart').text(JSON.stringify(data));
+            $('#loadData').text(JSON.stringify(data));
         }
     });
 }

@@ -2,7 +2,7 @@
   "name": "appointmentfinder",
   "version": "1.0.0",
   "description": "It's like doodle xD",
-  "main": "index.js",
+  "main": "index.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "lite-server",
@@ -20,10 +20,7 @@
   },
   "homepage": "https://github.com/Leonvonvoss/AppointmentFinder#readme",
   "devDependencies": {
-    "lite-server": "^2.6.1"
-  },
-  "dependencies": {
-    "@types/jquery": "^3.5.5",
-    "save-dev": "0.0.1-security"
+    "lite-server": "^2.6.1",
+    "@types/jquery": "^3.5.5"
   }
 }

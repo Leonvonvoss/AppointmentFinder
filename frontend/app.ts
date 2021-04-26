@@ -20,7 +20,7 @@ function loadData() {
         dataType: "json",
 
         success: function (data: object) {
-            $('#mainpart').text(JSON.stringify(data));
+            $('#loadData').text(JSON.stringify(data));
         }
 
     });
@@ -41,13 +41,13 @@ function loadSelectData() {
         success: function (data) {
             let $quellZeitzone = $('#quellZeitzone');
             $quellZeitzone.empty();
-            for (var i = 0; i < data.length; i++) {
+            for (let i = 0; i < data.length; i++) {
                 $quellZeitzone.append('<option value=' + data[i] + '>' + data[i] + '</option>');
             }
 
             let $zielZeitzone = $('#zielZeitzone');
             $zielZeitzone.empty();
-            for (var i = 0; i < data.length; i++) {
+            for (let i = 0; i < data.length; i++) {
                 $zielZeitzone.append('<option value=' + data[i] + '>' + data[i] + '</option>');
             }
 
