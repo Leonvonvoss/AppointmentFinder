@@ -74,4 +74,8 @@ class DB {
     {
         return $this->statement->rowCount();
     }
+
+    public function closeConnection() {
+        $this->statement->close();
+    }
 }

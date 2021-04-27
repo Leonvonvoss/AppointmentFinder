@@ -32,7 +32,7 @@ CREATE TABLE `tAppoint` (
   `id` int(11) NOT NULL,
   `creator` varchar(255) NOT NULL,
   `title` varchar(255) NOT NULL,
-  `location` varchar(255) NOT NULL,
+  `locations` varchar(255) NOT NULL,
   `info` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -40,7 +40,7 @@ CREATE TABLE `tAppoint` (
 -- Dumping data for table `tAppoint`
 --
 
-INSERT INTO `tAppoint` (`id`, `creator`, `title`, `location`, `info`) VALUES
+INSERT INTO `tAppoint` (`id`, `creator`, `title`, `locations`, `info`) VALUES
 (1, 'wodornan0', 'actuating', 'Guyangan', 'Cloned stable benchmark'),
 (2, 'agowenlock1', 'Proactive', 'Pederneiras', 'Re-engineered motivating instruction set'),
 (3, 'freadwing2', 'Streamlined', 'Stockholm', 'User-centric dynamic initiative'),
