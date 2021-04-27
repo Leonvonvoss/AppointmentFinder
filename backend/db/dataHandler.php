@@ -1,12 +1,14 @@
 <?php
-include("./model/person.php");
 include("./model/appointment.php");
+include("DB.php");
 class DataHandler
 {
 
+    private $db;
+
     public function queryAppoints()
     {
-        $res =  $this->getDemoData();
+        $res =  $this->getAllData();
         return $res;
     }
 
@@ -14,8 +16,9 @@ class DataHandler
     {
         $result = array();
         foreach ($this->queryAppoints() as $val) {
-            if ($val[0]->id == $id) {
-                array_push($result, $val);
+            if ($val->id == $id) {
+                $appoint = new Appointment($val->id, $val->creator, $val->title, $val->location, $val->info);
+                array_push($result, $appoint);
             }
         }
         return $result;
@@ -25,7 +28,7 @@ class DataHandler
     {
         $result = array();
         foreach ($this->queryAppoints() as $val) {
-            if ($val[0]->creator == $creator) {
+            if ($val->creator == $creator) {
                 array_push($result, $val);
             }
         }
@@ -36,7 +39,7 @@ class DataHandler
     {
         $result = array();
         foreach ($this->queryAppoints() as $val) {
-            if ($val[0]->title == $title) {
+            if ($val->title == $title) {
                 array_push($result, $val);
             }
         }
@@ -47,7 +50,7 @@ class DataHandler
     {
         $result = array();
         foreach ($this->queryAppoints() as $val) {
-            if ($val[0]->location == $location) {
+            if ($val->location == $location) {
                 array_push($result, $val);
             }
         }
@@ -58,51 +61,30 @@ class DataHandler
     {
         $result = array();
         foreach ($this->queryAppoints() as $val) {
-            if ($val[0]->info == $info) {
+            if ($val->info == $info) {
                 array_push($result, $val);
             }
         }
         return $result;
     }
 
-    public function queryAppointByStartDate($startDate)
-    {
-        $result = array();
-        foreach ($this->queryAppoints() as $val) {
-            if ($val[0]->startDate == $startDate) {
-                array_push($result, $val);
-            }
-        }
-        return $result;
-    }
+    private function getAllData(){
+        $this->db = new DB();
 
-    /*
-     * Need to be fixed
-     */
-    public function queryAppointsASCStartDate()
-    {
-        $result = array();
-        foreach ($this->queryAppoints() as $val) {
-            if ($val[0]->startDate != "") {
-                array_push($result, $val);
-            }
-        }
+        $this->db->query('SELECT * FROM tappoint;');
+        $this->db->execute();
+        $allData = $this->db->resultSet();
 
-        function cb($a, $b) {
-            return strtotime($a->startDate) - strtotime($b->startDate);
-        }
-        usort($result, 'cb');
-
-        return $result;
+        return $allData;
     }
 
     private static function getDemoData()
     {
         $demoData = [
-            new Appointment(1, "Leon","Coronaparty", "At my hood", "Come all together!", "23.04.2021 15:00:00", "24.04.2021 15:00:00"),
-            new Appointment(2, "Lanre","Movie night", "At FH-Technikum", "Netflix!!!", "25.04.2021 15:00:00", "26.04.2021 15:00:00"),
-            new Appointment(3, "Dave","Cooking dinner", "In the kitchen", "Awesome food! Bring your glass with you!", "27.04.2021 15:00:00", "28.04.2021 15:00:00"),
-            new Appointment(4, "Anna","Birthday", "On the rooftop", "Musik, alkohol and fun!", "29.04.2021 15:00:00", "30.04.2021 15:00:00"),
+            new Appointment(1, "Leon","Coronaparty", "At my hood", "Come all together!"),
+            new Appointment(2, "Lanre","Movie night", "At FH-Technikum", "Netflix!!!"),
+            new Appointment(3, "Dave","Cooking dinner", "In the kitchen", "Awesome food! Bring your glass with you!"),
+            new Appointment(4, "Anna","Birthday", "On the rooftop", "Musik, alkohol and fun!"),
         ];
         return $demoData;
     }
