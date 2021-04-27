@@ -7,12 +7,13 @@
     <meta name="description" content="It's like Doodle xD">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="pages/assets/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i">
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i">
     <link rel="stylesheet" href="pages/assets/fonts/fontawesome-all.min.css">
     <link rel="stylesheet" href="pages/assets/fonts/font-awesome.min.css">
     <link rel="stylesheet" href="pages/assets/fonts/fontawesome5-overrides.min.css">
     <!-- Custom styles for this template -->
-    <link type="text/css" rel="stylesheet" href="pages/assets/css/style.css" />
+    <link type="text/css" rel="stylesheet" href="pages/assets/css/style.css"/>
     <!-- jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <!-- Custom JavaScript -->
@@ -26,7 +27,8 @@
         <div id="content">
             <nav class="navbar navbar-light navbar-expand bg-white shadow mb-4 topbar static-top">
                 <div class="container-fluid">
-                    <div class="sidebar-brand-icon rotate-n-15 d-none d-sm-block"><i class="fas fa-laugh-wink"></i></div>
+                    <div class="sidebar-brand-icon rotate-n-15 d-none d-sm-block"><i class="fas fa-laugh-wink"></i>
+                    </div>
                     <div class="sidebar-brand-text mx-1"><span><strong>AppointFinder</strong></span></div>
                     <ul class="navbar-nav flex-nowrap ms-auto">
                         <li class="nav-item dropdown no-arrow">
@@ -34,11 +36,15 @@
                                 <a class="dropdown-toggle nav-link" aria-expanded="false">
                                         <span class="d-lg-inline me-1 text-gray-600 small">
                                             <div class="input-group input-group-sm">
-                                                <input type="text" id="inputUsername" name="inputUsername" class="form-control" placeholder="Name" aria-label="Name" aria-describedby="basic-addon1">
-                                                <button type="button" class="btn btn-primary btn-sm" onclick="submitUsername()">Los</button>
+                                                <input type="text" id="inputUsername" name="inputUsername"
+                                                       class="form-control" placeholder="Name" aria-label="Name"
+                                                       aria-describedby="basic-addon1">
+                                                <button type="button" class="btn btn-primary btn-sm"
+                                                        onclick="submitUsername()">Los</button>
                                             </div>
                                         </span>
-                                    <img class="border rounded-circle img-profile" src="pages/assets/img/avatars/avatar5.jpeg" alt="pic">
+                                    <img class="border rounded-circle img-profile"
+                                         src="pages/assets/img/avatars/avatar5.jpeg" alt="pic">
                                 </a>
                             </div>
                         </li>
@@ -49,7 +55,8 @@
                 <div class="d-sm-flex justify-content-between align-items-center mb-4">
                     <h3 class="text-dark mb-0"><strong>Appointments</strong></h3>
                     <!-- Button trigger modal -->
-                    <button type="button" class="btn btn-primary btn-sm d-sm-inline-block" data-bs-toggle="modal" data-bs-target="#createAppointModal">
+                    <button type="button" class="btn btn-primary btn-sm d-sm-inline-block" data-bs-toggle="modal"
+                            data-bs-target="#createAppointModal">
                         <i class="fas fa-download fa-sm text-white-50"></i>&nbsp; Appoint erzeugen</a>
                     </button>
 
@@ -59,7 +66,8 @@
                         <p class="text-primary m-0 fw-bold"><u>Appoints Info</u></p>
                     </div>
                     <div class="card-body">
-                        <div class="table-responsive table mt-2" id="dataTable" role="grid" aria-describedby="dataTable_info">
+                        <div class="table-responsive table mt-2" id="dataTable" role="grid"
+                             aria-describedby="dataTable_info">
                             <table class="table my-0" id="dataTable">
                                 <thead>
                                 <tr>
@@ -68,29 +76,11 @@
                                     <th>Titel</th>
                                     <th>Veranstaltungsort</th>
                                     <th>Info</th>
-                                    <th>Startdatum</th>
-                                    <th>Enddatum</th>
                                     <th></th>
                                 </tr>
                                 </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>1</td>
-                                        <td><img class="rounded-circle me-2" width="30" height="30" src="pages/assets/img/avatars/avatar5.jpeg">Leon</td>
-                                        <td>Coronaparty</td>
-                                        <td>At my hood</td>
-                                        <td>Come all together!</td>
-                                        <td>23.04.2021 15:00:00</td>
-                                        <td>24.04.2021 15:00:00</td>
-                                        <td>
-                                            <!-- Button trigger modal -->
-                                            <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#viewAppointDetailsModal" onclick="viewAppoint(1)">
-                                                <i class="fas fa-download fa-sm text-white-50"></i>&nbsp; Details</a>
-                                            </button>
-                                        </td>
-                                    </tr>
-                                    <div id="loadData">
-                                    </div>
+                                <tbody id="loadData">
+                                <!-- Loading appoints here - ajax -->
                                 </tbody>
                                 <tfoot>
                                 <tr>
@@ -99,8 +89,6 @@
                                     <td><strong>Titel</strong></td>
                                     <td><strong>Veranstaltungsort</strong></td>
                                     <td><strong>Info</strong></td>
-                                    <td><strong>Startdatum</strong></td>
-                                    <td><strong>Enddatum</strong></td>
                                     <td><strong></strong></td>
                                 </tr>
                                 </tfoot>
@@ -116,14 +104,21 @@
                                         <div class="row">
                                             <div class="col-md-6">
                                                 <form>
-                                                    <div class="mb-3"><label class="form-label" for="comment"><strong>Kommentieren</strong><br></label><textarea class="form-control" id="comment" rows="4" name="comment" placeholder="Kommentar hinzufügen"></textarea></div>
-                                                    <div class="mb-3"><button class="btn btn-primary btn-sm" type="submit">Hinzufügen</button></div>
+                                                    <div class="mb-3"><label class="form-label" for="comment"><strong>Kommentieren</strong><br></label><textarea
+                                                            class="form-control" id="comment" rows="4" name="comment"
+                                                            placeholder="Kommentar hinzufügen"></textarea></div>
+                                                    <div class="mb-3">
+                                                        <button class="btn btn-primary btn-sm" type="submit">
+                                                            Hinzufügen
+                                                        </button>
+                                                    </div>
                                                 </form>
                                             </div>
                                             <div class="col-md-6">
                                                 <form>
                                                     <div class="mb-3">
-                                                        <label class="form-label" for="tablecomments"><strong>Alle Kommentare</strong><br></label>
+                                                        <label class="form-label" for="tablecomments"><strong>Alle
+                                                            Kommentare</strong><br></label>
                                                         <table class="table my-0" id="tablecomments">
                                                             <thead>
                                                             <tr>
@@ -133,13 +128,14 @@
                                                             </tr>
                                                             </thead>
                                                             <tbody>
-                                                            <a id="trAppoint1"  href="google.com">
                                                                 <tr>
-                                                                    <td><img class="rounded-circle me-2" width="30" height="30" src="pages/assets/img/avatars/avatar5.jpeg">Lanre</td>
+                                                                    <td><img class="rounded-circle me-2" width="30"
+                                                                             height="30"
+                                                                             src="pages/assets/img/avatars/avatar5.jpeg">Lanre
+                                                                    </td>
                                                                     <td>Endlich feiern!</td>
                                                                     <td>24.04.2021 15:00:00</td>
                                                                 </tr>
-                                                            </a>
                                                             </tbody>
                                                         </table>
                                                     </div>
@@ -161,7 +157,10 @@
                                                     <h6 class="mb-0"><strong>24.04.2021 15:00:00</strong></h6>
                                                 </div>
                                                 <div class="col-auto">
-                                                    <div class="form-check"><input class="form-check-input" type="checkbox" id="formCheck-1"><label class="form-check-label" for="formCheck-1"></label></div>
+                                                    <div class="form-check"><input class="form-check-input"
+                                                                                   type="checkbox"
+                                                                                   id="formCheck-1"><label
+                                                            class="form-check-label" for="formCheck-1"></label></div>
                                                 </div>
                                             </div>
                                         </li>
@@ -171,7 +170,10 @@
                                                     <h6 class="mb-0"><strong>24.04.2021 16:00:00</strong></h6>
                                                 </div>
                                                 <div class="col-auto">
-                                                    <div class="form-check"><input class="form-check-input" type="checkbox" id="formCheck-1"><label class="form-check-label" for="formCheck-1"></label></div>
+                                                    <div class="form-check"><input class="form-check-input"
+                                                                                   type="checkbox"
+                                                                                   id="formCheck-1"><label
+                                                            class="form-check-label" for="formCheck-1"></label></div>
                                                 </div>
                                             </div>
                                         </li>
@@ -181,7 +183,10 @@
                                                     <h6 class="mb-0"><strong>24.04.2021 17:00:00</strong></h6>
                                                 </div>
                                                 <div class="col-auto">
-                                                    <div class="form-check"><input class="form-check-input" type="checkbox" id="formCheck-1"><label class="form-check-label" for="formCheck-1"></label></div>
+                                                    <div class="form-check"><input class="form-check-input"
+                                                                                   type="checkbox"
+                                                                                   id="formCheck-2"><label
+                                                            class="form-check-label" for="formCheck-2"></label></div>
                                                 </div>
                                             </div>
                                         </li>
@@ -204,7 +209,8 @@
     </div>
     <a class="border rounded d-inline scroll-to-top" href="#page-top"><i class="fas fa-angle-up"></i></a>
     <!-- Modal - Create Appoint -->
-    <div class="modal fade" id="createAppointModal" tabindex="-1" aria-labelledby="createAppointModal" aria-hidden="true">
+    <div class="modal fade" id="createAppointModal" tabindex="-1" aria-labelledby="createAppointModal"
+         aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -213,8 +219,13 @@
                 </div>
                 <div class="modal-body">
                     <form>
-                        <div class="mb-3"><label class="form-label" for="comment"><strong>Kommentieren</strong><br></label><textarea class="form-control" id="comment" rows="4" name="comment" placeholder="Kommentar hinzufügen"></textarea></div>
-                        <div class="mb-3"><button class="btn btn-primary btn-sm" type="submit">Hinzufügen</button></div>
+                        <div class="mb-3"><label class="form-label"
+                                                 for="comment"><strong>Kommentieren</strong><br></label><textarea
+                                class="form-control" id="commentNew" rows="4" name="comment"
+                                placeholder="Kommentar hinzufügen"></textarea></div>
+                        <div class="mb-3">
+                            <button class="btn btn-primary btn-sm" type="submit">Hinzufügen</button>
+                        </div>
                     </form>
                 </div>
                 <div class="modal-footer">
@@ -225,7 +236,8 @@
         </div>
     </div>
     <!-- Modal - View AppointDetails -->
-    <div class="modal fade" id="viewAppointDetailsModal" tabindex="-1" aria-labelledby="viewAppointDetailsModal" aria-hidden="true">
+    <div class="modal fade" id="viewAppointDetailsModal" tabindex="-1" aria-labelledby="viewAppointDetailsModal"
+         aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">

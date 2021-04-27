@@ -43,10 +43,6 @@ class SimpleLogic
                 $res = $this->dh->queryAppointByStartDate($param);
                 break;
 
-            case "queryAppointsASCStartDate":
-                $res = $this->dh->queryAppointsASCStartDate();
-                break;
-
             default:
                 $res = null;
                 break;
