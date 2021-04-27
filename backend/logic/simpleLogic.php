@@ -39,9 +39,13 @@ class SimpleLogic
                 $res = $this->dh->queryAppointByInfo($param);
                 break;
 
-            case "queryAppointByStartDate":
-                $res = $this->dh->queryAppointByStartDate($param);
+            case "createAppoint":
+                $res = $this->dh->createAppoint($param);
                 break;
+
+            /*case "saveChanges":
+                $res = $this->dh->saveChanges($param);
+                break;*/
 
             default:
                 $res = null;

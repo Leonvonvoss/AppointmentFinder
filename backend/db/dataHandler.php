@@ -1,11 +1,17 @@
 <?php
 include("./model/appointment.php");
+include("./model/comment.php");
+include("./model/possibleDate.php");
+include("./model/vote.php");
 include("DB.php");
+
 class DataHandler
 {
-
     private $db;
 
+    /*
+     * All functions to GET
+     */
     public function queryAppoints()
     {
         $res =  $this->getAllData();
@@ -87,5 +93,19 @@ class DataHandler
             new Appointment(4, "Anna","Birthday", "On the rooftop", "Musik, alkohol and fun!"),
         ];
         return $demoData;
+    }
+
+    /*
+    * All functions to POST
+    */
+    public function createAppoint($appoint)
+    {
+        $this->db = new DB();
+
+        $this->db->query("INSERT INTO tappoint VALUES()");
+        $this->db->execute();
+        $allData = $this->db->resultSet();
+
+        return $allData;
     }
 }
