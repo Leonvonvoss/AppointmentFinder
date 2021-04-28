@@ -14,8 +14,14 @@ class DataHandler
      */
     public function queryAppoints()
     {
-        $res =  $this->getAllData();
-        return $res;
+        $result = array();
+        foreach ($this->getAllData() as $val) {
+            if ($val != null) {
+                $appoint = new Appointment($val->id, $val->creator, $val->title, $val->locations, $val->info);
+                array_push($result, $appoint);
+            }
+        }
+        return $result;
     }
 
     public function queryAppointById($id)
@@ -23,7 +29,7 @@ class DataHandler
         $result = array();
         foreach ($this->queryAppoints() as $val) {
             if ($val->id == $id) {
-                $appoint = new Appointment($val->id, $val->creator, $val->title, $val->location, $val->info);
+                $appoint = new Appointment($val->id, $val->creator, $val->title, $val->locations, $val->info);
                 array_push($result, $appoint);
             }
         }
@@ -35,7 +41,8 @@ class DataHandler
         $result = array();
         foreach ($this->queryAppoints() as $val) {
             if ($val->creator == $creator) {
-                array_push($result, $val);
+                $appoint = new Appointment($val->id, $val->creator, $val->title, $val->locations, $val->info);
+                array_push($result, $appoint);
             }
         }
         return $result;
@@ -46,7 +53,8 @@ class DataHandler
         $result = array();
         foreach ($this->queryAppoints() as $val) {
             if ($val->title == $title) {
-                array_push($result, $val);
+                $appoint = new Appointment($val->id, $val->creator, $val->title, $val->locations, $val->info);
+                array_push($result, $appoint);
             }
         }
         return $result;
@@ -57,7 +65,8 @@ class DataHandler
         $result = array();
         foreach ($this->queryAppoints() as $val) {
             if ($val->location == $location) {
-                array_push($result, $val);
+                $appoint = new Appointment($val->id, $val->creator, $val->title, $val->locations, $val->info);
+                array_push($result, $appoint);
             }
         }
         return $result;
@@ -68,7 +77,8 @@ class DataHandler
         $result = array();
         foreach ($this->queryAppoints() as $val) {
             if ($val->info == $info) {
-                array_push($result, $val);
+                $appoint = new Appointment($val->id, $val->creator, $val->title, $val->locations, $val->info);
+                array_push($result, $appoint);
             }
         }
         return $result;
@@ -95,17 +105,84 @@ class DataHandler
         return $demoData;
     }
 
+    public function queryComments()
+    {
+        $result = array();
+        foreach ($this->getAllData() as $val) {
+                $comment = new Comment($val->id, $val->creator, $val->comment, $val->datePosted, $val->tAppointID);
+                array_push($result, $comment);
+        }
+        return $result;
+    }
+
+    public function queryCommentsbyAppointId($id)
+    {
+        $result = array();
+        foreach ($this->getAllData() as $val) {
+            if ($val->tappointid == $id) {
+                $comment = new Comment($val->id, $val->creator, $val->comment, $val->datePosted, $val->tAppointID);
+                array_push($result, $comment);
+            }
+        }
+        return $result;
+    }
+
     /*
-    * All functions to POST
-    */
-    public function createAppoint($appoint)
+   * All functions to POST
+   */
+    public function createAppoint($appointData)
     {
         $this->db = new DB();
 
-        $this->db->query("INSERT INTO tappoint VALUES()");
-        $this->db->execute();
-        $allData = $this->db->resultSet();
+        $this->db->query("INSERT INTO tappoint (creator, title, locations, info ) VALUES(:creator, :title, :locations, :info)");
 
-        return $allData;
+        //Bind values
+        $this->db->bind(':creator',  $appointData[1]);
+        $this->db->bind(':title',  $appointData[2]);
+        $this->db->bind(':locations',  $appointData[3]);
+        $this->db->bind(':info', $appointData[4]);
+
+        //Execute function
+        if ($this->db->execute()) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public function createComment($comment)
+    {
+        $this->db = new DB();
+
+        $this->db->query("INSERT INTO tcomments (creator, comment, datePosted, tappointid) VALUES(:creator, :comment, :datePosted, :tappointid)");
+        //Bind values
+        $this->db->bind(':creator', $comment['creator']);
+        $this->db->bind(':comment', $comment['comment']);
+        $this->db->bind(':datePosted', $comment['datePosted']);
+        $this->db->bind(':tappointid', $comment['tappointid']);
+
+        //Execute function
+        if ($this->db->execute()) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public function createVote($vote)
+    {
+        $this->db = new DB();
+
+        $this->db->query("INSERT INTO tvote (voterName, tpossibledateID) VALUES(:voterName, :tpossibledateID)");
+        //Bind values
+        $this->db->bind(':voterName', $vote['voterName']);
+        $this->db->bind(':tpossibledateID', $vote['tpossibledateID']);
+
+        //Execute function
+        if ($this->db->execute()) {
+            return true;
+        } else {
+            return false;
+        }
     }
 }

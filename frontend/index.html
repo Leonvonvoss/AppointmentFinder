@@ -80,7 +80,9 @@
                                 </tr>
                                 </thead>
                                 <tbody id="loadData">
-                                <!-- Loading appoints here - ajax -->
+
+                                    <!-- Loading appoints here - ajax -->
+
                                 </tbody>
                                 <tfoot>
                                 <tr>
@@ -94,109 +96,6 @@
                                 </tfoot>
                             </table>
                         </div>
-                        <div class="row mt-4">
-                            <div class="col-md-12">
-                                <div class="card shadow mb-5">
-                                    <div class="card-header py-3">
-                                        <p class="text-primary m-0 fw-bold"><u>Kommentare</u></p>
-                                    </div>
-                                    <div class="card-body">
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <form>
-                                                    <div class="mb-3"><label class="form-label" for="comment"><strong>Kommentieren</strong><br></label><textarea
-                                                            class="form-control" id="comment" rows="4" name="comment"
-                                                            placeholder="Kommentar hinzufügen"></textarea></div>
-                                                    <div class="mb-3">
-                                                        <button class="btn btn-primary btn-sm" type="submit">
-                                                            Hinzufügen
-                                                        </button>
-                                                    </div>
-                                                </form>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <form>
-                                                    <div class="mb-3">
-                                                        <label class="form-label" for="tablecomments"><strong>Alle
-                                                            Kommentare</strong><br></label>
-                                                        <table class="table my-0" id="tablecomments">
-                                                            <thead>
-                                                            <tr>
-                                                                <th>Erzeuger</th>
-                                                                <th>Kommentar</th>
-                                                                <th>Datum</th>
-                                                            </tr>
-                                                            </thead>
-                                                            <tbody>
-                                                                <tr>
-                                                                    <td><img class="rounded-circle me-2" width="30"
-                                                                             height="30"
-                                                                             src="pages/assets/img/avatars/avatar5.jpeg">Lanre
-                                                                    </td>
-                                                                    <td>Endlich feiern!</td>
-                                                                    <td>24.04.2021 15:00:00</td>
-                                                                </tr>
-                                                            </tbody>
-                                                        </table>
-                                                    </div>
-                                                </form>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-2">
-                                <div class="card shadow mb-4">
-                                    <div class="card-header py-3">
-                                        <h6 class="text-primary fw-bold m-0"><u>Deine Verfügbarkeit / Vote</u></h6>
-                                    </div>
-                                    <ul class="list-group list-group-flush">
-                                        <li class="list-group-item">
-                                            <div class="row align-items-center no-gutters">
-                                                <div class="col me-2">
-                                                    <h6 class="mb-0"><strong>24.04.2021 15:00:00</strong></h6>
-                                                </div>
-                                                <div class="col-auto">
-                                                    <div class="form-check"><input class="form-check-input"
-                                                                                   type="checkbox"
-                                                                                   id="formCheck-1"><label
-                                                            class="form-check-label" for="formCheck-1"></label></div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="list-group-item">
-                                            <div class="row align-items-center no-gutters">
-                                                <div class="col me-2">
-                                                    <h6 class="mb-0"><strong>24.04.2021 16:00:00</strong></h6>
-                                                </div>
-                                                <div class="col-auto">
-                                                    <div class="form-check"><input class="form-check-input"
-                                                                                   type="checkbox"
-                                                                                   id="formCheck-1"><label
-                                                            class="form-check-label" for="formCheck-1"></label></div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="list-group-item">
-                                            <div class="row align-items-center no-gutters">
-                                                <div class="col me-2">
-                                                    <h6 class="mb-0"><strong>24.04.2021 17:00:00</strong></h6>
-                                                </div>
-                                                <div class="col-auto">
-                                                    <div class="form-check"><input class="form-check-input"
-                                                                                   type="checkbox"
-                                                                                   id="formCheck-2"><label
-                                                            class="form-check-label" for="formCheck-2"></label></div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="list-group-item text-center">
-                                            <button class="btn btn-primary btn-sm" type="submit">Hinzufügen</button>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -209,35 +108,46 @@
     </div>
     <a class="border rounded d-inline scroll-to-top" href="#page-top"><i class="fas fa-angle-up"></i></a>
     <!-- Modal - Create Appoint -->
-    <div class="modal fade" id="createAppointModal" tabindex="-1" aria-labelledby="createAppointModal"
-         aria-hidden="true">
+    <div class="modal fade" id="createAppointModal" tabindex="-1" aria-labelledby="createAppointModal" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="createAppointModalLabel">Create Appoint</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="modal-body">
-                    <form>
-                        <div class="mb-3"><label class="form-label"
-                                                 for="comment"><strong>Kommentieren</strong><br></label><textarea
-                                class="form-control" id="commentNew" rows="4" name="comment"
-                                placeholder="Kommentar hinzufügen"></textarea></div>
-                        <div class="mb-3">
-                            <button class="btn btn-primary btn-sm" type="submit">Hinzufügen</button>
-                        </div>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Schließen</button>
-                    <button type="button" class="btn btn-primary" onclick="createAppoint()">Appoint erzeugen</button>
-                </div>
+                <form>
+                    <div class="modal-body">
+                            <div class="mb-3">
+                                <label for="createAppointTitleInput" class="form-label">Titel</label>
+                                <input type="text" class="form-control" id="createAppointTitleInput" name="createAppointTitleInput" placeholder="Titel" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="createAppointLocationInput" class="form-label">Veranstaltungsort</label>
+                                <input type="text" class="form-control" id="createAppointLocationInput" name="createAppointLocationInput" placeholder="Veranstaltungsort" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="createAppointBeginDateInput" class="form-label">Begin</label>
+                                <input type="datetime-local" class="form-control" id="createAppointBeginDateInput" name="createAppointBeginDateInput" placeholder="Start Datum" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="createAppointEndDateInput" class="form-label">Ende</label>
+                                <input type="datetime-local" class="form-control" id="createAppointEndDateInput" name="createAppointEndDateInput" placeholder="End Datum" required>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label" for="createAppointInfoInput"><strong>Info</strong><br></label>
+                                <textarea class="form-control" rows="4" id="createAppointInfoInput" name="createAppointInfoInput" placeholder="Info hinzufügen"></textarea>
+                            </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Schließen</button>
+                        <button type="button" class="btn btn-primary" onclick="createAppoint()">Appoint erzeugen</button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
     <!-- Modal - View AppointDetails -->
-    <div class="modal fade" id="viewAppointDetailsModal" tabindex="-1" aria-labelledby="viewAppointDetailsModal"
-         aria-hidden="true">
+    <div class="modal fade" id="viewAppointDetailsModal" tabindex="-1" aria-labelledby="viewAppointDetailsModal" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -245,11 +155,90 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    ...
+                    <form>
+                        <div class="mb-3 text-center">
+                            <form>
+                                <label class="form-label" for="tablecomments"><span class="text-dark"><strong>Alle Kommentare</strong></span><br></label>
+                                <table class="table my-0" id="tablecomments">
+                                    <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Erzeuger</th>
+                                        <th>Kommentar</th>
+                                        <th>Datum</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody id="loadComments">
+
+                                        <!-- Loading comments for appoint here - ajax -->
+
+                                    </tbody>
+                                </table>
+                            </form>
+                        </div>
+                        <div class="mb-3 text-center mt-3">
+                            <label class="form-label" for="viewComment"><span class="text-dark"><strong>Kommentieren</strong></span><br></label>
+                            <textarea
+                                class="form-control" id="viewComment" rows="4" name="viewComment"
+                                placeholder="Kommentar hinzufügen"></textarea>
+                        </div>
+                        <div class="mb-3 text-center">
+                            <button class="btn btn-primary btn-sm" type="button" onclick="createComment()">Kommentieren</button>
+                        </div>
+                        <hr>
+                        <div class="mb-3">
+                            <div class="card-header py-3 text-center">
+                                <span class="text-dark"><strong>Deine Verfügbarkeit / Vote</strong></span>
+                            </div>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">
+                                    <div class="row align-items-center no-gutters">
+                                        <div class="col me-2">
+                                            <h6 class="mb-0"><strong>24.04.2021 15:00:00</strong></h6>
+                                        </div>
+                                        <div class="col-auto">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="formCheck-1">
+                                                <label class="form-check-label" for="formCheck-1"></label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="list-group-item">
+                                    <div class="row align-items-center no-gutters">
+                                        <div class="col me-2">
+                                            <h6 class="mb-0"><strong>24.04.2021 16:00:00</strong></h6>
+                                        </div>
+                                        <div class="col-auto">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="formCheck-1">
+                                                <label class="form-check-label" for="formCheck-1"></label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="list-group-item">
+                                    <div class="row align-items-center no-gutters">
+                                        <div class="col me-2">
+                                            <h6 class="mb-0"><strong>24.04.2021 17:00:00</strong></h6>
+                                        </div>
+                                        <div class="col-auto">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="formCheck-2">
+                                                <label class="form-check-label" for="formCheck-2"></label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="list-group-item text-center">
+                                    <button class="btn btn-primary btn-sm" type="button" onclick="createVote()">Vote</button>
+                                </li>
+                            </ul>
+                        </div>
+                    </form>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Schließen</button>
-                    <button type="button" class="btn btn-primary" onclick="saveChanges()">Speichern</button>
                 </div>
             </div>
         </div>

@@ -56,6 +56,7 @@ INSERT INTO `tAppoint` (`id`, `creator`, `title`, `locations`, `info`) VALUES
 
 CREATE TABLE `tComments` (
   `id` int(11) NOT NULL,
+  `creator` text NOT NULL,
   `comment` text NOT NULL,
   `datePosted` datetime NOT NULL,
   `tAppointID` int(11) NOT NULL
@@ -65,13 +66,13 @@ CREATE TABLE `tComments` (
 -- Dumping data for table `tComments`
 --
 
-INSERT INTO `tComments` (`id`, `comment`, `datePosted`, `tAppointID`) VALUES
-(1, 'Expanded regional budgetary management', '0000-00-00 00:00:00', 4),
-(2, 'User-friendly fresh-thinking implementation', '0000-00-00 00:00:00', 5),
-(3, 'Cross-platform motivating open architecture', '0000-00-00 00:00:00', 1),
-(4, 'Centralized grid-enabled support', '0000-00-00 00:00:00', 2),
-(5, 'Visionary bandwidth-monitored contingency', '0000-00-00 00:00:00', 4),
-(6, 'Versatile actuating open architecture', '0000-00-00 00:00:00', 6);
+INSERT INTO `tComments` (`id`, `creator`, `comment`, `datePosted`, `tAppointID`) VALUES
+(1, 'Anna', 'Expanded regional budgetary management', '0000-00-00 00:00:00', 4),
+(2, 'Benni', 'User-friendly fresh-thinking implementation', '0000-00-00 00:00:00', 5),
+(3, 'Alex', 'Cross-platform motivating open architecture', '0000-00-00 00:00:00', 1),
+(4, 'Sarah', 'Centralized grid-enabled support', '0000-00-00 00:00:00', 2),
+(5, 'Max', 'Visionary bandwidth-monitored contingency', '0000-00-00 00:00:00', 4),
+(6, 'Leon', 'Versatile actuating open architecture', '0000-00-00 00:00:00', 6);
 
 -- --------------------------------------------------------
 
