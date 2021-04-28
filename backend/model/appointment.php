@@ -11,7 +11,7 @@ class Appointment
     public $id;
     public $creator;
     public $title;
-    public $location;
+    public $locations;
     public $info;
 
     /**
@@ -19,15 +19,15 @@ class Appointment
      * @param $id
      * @param $creator
      * @param $title
-     * @param $location
+     * @param $locations
      * @param $info
      */
-    public function __construct($id, $creator, $title, $location, $info)
+    public function __construct($id, $creator, $title, $locations, $info)
     {
         $this->id = $id;
         $this->creator = $creator;
         $this->title = $title;
-        $this->location = $location;
+        $this->locations = $locations;
         $this->info = $info;
     }
 

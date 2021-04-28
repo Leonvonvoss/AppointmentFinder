@@ -43,9 +43,21 @@ class SimpleLogic
                 $res = $this->dh->createAppoint($param);
                 break;
 
-            /*case "saveChanges":
-                $res = $this->dh->saveChanges($param);
-                break;*/
+            case "queryCommentsbyAppointId":
+                $res = $this->dh->queryCommentsbyAppointId($param);
+                break;
+
+            case "queryComments":
+                $res = $this->dh->queryComments();
+                break;
+
+            case "createComment":
+                $res = $this->dh->createComment($param);
+                break;
+
+            case "createVote":
+                $res = $this->dh->createVote($param);
+                break;
 
             default:
                 $res = null;
